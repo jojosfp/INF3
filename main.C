@@ -26,6 +26,14 @@ using namespace std;
 
 int main(){
 	srand(time(nullptr));
+
+	//cout << "Hello World  \n";
+
+	// TASK1::demoTASK1_00();
+	// BLackBoxSafe
+	// TASK1::demoTASK1_01();
+
+	TASK3::demoTask3();
 }
 
 

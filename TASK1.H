@@ -97,15 +97,13 @@ protected:
  * \brief Implements a more safe password checker where only the
  * password's checksum is stored.
  *
- * Notice, implementation is not finished.
- *
- *
  */
-class BlackBoxSafe : public BlackBoxUnsafe{
-	/// \todo  Implementation of class BlackBoxSafe needs to be finalized.
+class BlackBoxSafe : public BlackBoxUnsafe
+{
 public:
-	BlackBoxSafe(int pwdLength, int symbSetSize) : BlackBoxUnsafe(pwdLength, symbSetSize){;};
-	virtual string input(string strPwd){return string("undefined");};
+	BlackBoxSafe(int pwdLength, int symbSetSize);
+
+	string input(string strPwd);
 };
 
 
