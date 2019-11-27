@@ -33,7 +33,7 @@ int main(){
 	// BLackBoxSafe
 	// TASK1::demoTASK1_01();
 
-	TASK3::demoTask3();
+	//TASK3::demoTask3();
 }
 
 

@@ -34,7 +34,7 @@ BlackBoxUnsafe::BlackBoxUnsafe(int pwdLength, int symbSetSize){
 }
 
 string BlackBoxUnsafe::input(string strPwd){
-	if(strPwd.compare(pwd_)){
+	if(strPwd.compare(pwd_) == 0){
 		return string("ACCESS ACCEPTED");
 	}
 	return string("ACCESS DENIED");
@@ -60,7 +60,7 @@ string BlackBoxSafe::input(string strPwd)
 {
 	string shaPwd = sha256(strPwd);
 
-	if(shaPwd.compare(this->pwd_))
+	if(shaPwd.compare(this->pwd_) == 0)
 	{
 		return string("ACCESS ACCEPTED");
 	}
