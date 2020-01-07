@@ -3,7 +3,7 @@ CC=g++
 CFLAGS=$(shell pkg-config --cflags opencv) 
 LIBS=$(shell pkg-config --libs opencv) 
 
-OBJS= main.o  TASK1.o TASK2.o TASK3.o TASK4.o TASK5.o SHA256.o SIMPLESOCKET.o
+OBJS= main.o  TASK1.o TASK2.o TASK3.o TASK4.o TASK5.o SHA256.o SIMPLESOCKET.o MYTASK_B.o
 DEMOTARGET=main server client mainTest
 
 client.o:	client.C
@@ -42,6 +42,9 @@ mainTest.o:	mainTest.C
 MYTASK_B.o:	MYTASK_B.C
 	$(CC) -c $<  -std=c++11 
 
+STRATEGY.o: STRATEGY.C
+	$(CC) -c $<  -std=c++11 
+	
 
 main:	$(OBJS)
 	$(CC) -o $@ $^ -L/usr/lib/x86_64-linux-gnu -ldl -lstdc++  -std=c++11 -lpthread $(LIBS)
@@ -52,8 +55,8 @@ mainTest:	mainTest.o
 server:	server.o MYTASK_B.o TASK3.o
 	$(CC) -o server server.o  MYTASK_B.o TASK3.o SIMPLESOCKET.o -L/usr/lib/x86_64-linux-gnu -ldl -lstdc++  -std=c++11
 
-client:	client.o
-	$(CC) -o client client.o SIMPLESOCKET.o -L/usr/lib/x86_64-linux-gnu -ldl -lstdc++  -std=c++11
+client:	client.o STRATEGY.o
+	$(CC) -o client client.o SIMPLESOCKET.o STRATEGY.o -L/usr/lib/x86_64-linux-gnu -ldl -lstdc++  -std=c++11
 
 clean:
 	-rm -r -f   $(DEMOTARGET) *.o DOXYGENDOC  *.txt
