@@ -28,7 +28,7 @@ void StrategyOne::strat(){
 	string host = "localhost";
 	string msg;
 
-	// Zwischenspeicher fï¿½r Daten
+	// Zwischenspeicher für Daten
 	fstream data;
 
 	// Treffer, Schusszaehler, Spielzaehler
@@ -61,24 +61,26 @@ void StrategyOne::strat(){
 		{
 			while (x <= 10)
 			{
-				//Koordinaten ausgeben
+				// Koordinaten in msg schreiben
 				msg = "COORD[" + to_string(x) + ";" + to_string(y) + "]";
-				
-				//Koordinaten an Server senden
+
+				// msg (Koordinaten) an Server senden
 				cout << "client:	" << msg << endl;
 				c.sendData(msg);
 
-				//Server antwortet, msg wird zur Antwort
+				// Server antwortet, msg wird zur Antwort
 				msg = c.receive(24);
 				cout << "server:	" << msg << endl;
 
-				//Treffer Zaehler
+				// Antwort auswerten (RES[1] = SHIP-HIT)
 				if(msg.compare(0,6, "RES[1]") == 0)
 				{
 					hitcounter++;
 
 					cout << hitcounter << endl;
 				}
+
+				// Antwort auswerten (RES[2] = SHIP-DESTROYED)
 				else if (msg.compare(0,6, "RES[2]") == 0)
 				{
 					hitcounter++;
@@ -86,6 +88,7 @@ void StrategyOne::strat(){
 					cout << hitcounter << endl;
 				}
 
+				// Antwort auswerten (RES[4] = GAME-OVER)
 				if(msg.compare(0,6, "RES[4]") == 0)
 				{
 					hitcounter++;
@@ -109,14 +112,14 @@ void StrategyOne::strat(){
 			x = 1;
 		}
 
-		//Shotcounter Ausgabe
+		//Shotcounter Ausgabe im Clientenfenster
 		cout << endl << "shots needed:   " << shotcounter << endl;
 
 		//Durchgang und Anzahl an Schuesse werden in Datei geschrieben
 		data << "Spiel # " << gamecounter << " :   ";
 		data << shotcounter << endl;
 
-		//Beenden des Alg. bei 20 Durchgaengen
+		// Abbruchkriterium fuer Spieleanzahl
 		if (gamecounter >= 20)
 		{
 			goOn = 0;
@@ -124,27 +127,24 @@ void StrategyOne::strat(){
 		}
 		else
 		{
-			//New Game Message
+			// Neustart
 			msg = "NEWGAME";
-
-			//Message wird gesendet
 			cout << "client:	" << msg << endl;
 			c.sendData(msg);
 		}
 
-		//msg wird zur Antwort des Servers
 		msg = c.receive(24);
 		cout << "server:	" << msg << endl;
 
-		//Neuer Durchgang
 		gamecounter++;
 	}
 
-	//Datei wird geschlossen
+	// Schliessen der Datei
 	data.close();
 
 	cout << "Erfolgreich gespeichert" << endl;
 
+	// Beenden des Servers
 	cout << "client says: ";
 	c.sendData("BYEBYE");
 
