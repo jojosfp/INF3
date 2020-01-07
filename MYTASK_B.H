@@ -9,7 +9,6 @@
 #define MYTASK_B_H_
 
 #include "TASK3.H"
-
 #include "SIMPLESOCKET.H"
 
 class MyTCPserver : public TCPserver

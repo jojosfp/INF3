@@ -11,6 +11,17 @@
 
 using namespace std;
 
+/*
+ * Shoot results
+ *
+ * res[0] = "Water"
+ * res[1] = "SHIP_HIT"
+ * res[2] = "SHIP_DESTROYED"
+ * res[3] = "ALL__SHIPS_DESTROYED"
+ * res[4] = "GAME_OVER"
+ *
+ */
+
 string MyTCPserver::myResponse(string input)
 {
 	std::stringstream ss;
@@ -18,6 +29,8 @@ string MyTCPserver::myResponse(string input)
 	int x,y;
 
 	TASK3::ShootResult result;
+
+	//
 
 	if(input.compare(0,6,"COORD[") == 0)
 	{
@@ -43,7 +56,7 @@ string MyTCPserver::myResponse(string input)
 		myWorld = new TASK3::World;
 		myWorld->printBoard();
 
-		return string("OK");
+		return string("NEW GAME CREATED \n");
 	};
 
 	return string("UNKNOWN COMMAND");
