@@ -14,6 +14,12 @@
 using namespace std;
 
 int main() {
+
+	StragetyOne tryMeHarder;
+	tryMeHarder.strat();
+
+
+	/*
 	srand(time(NULL));
 	TCPclient c;
 	string host = "localhost";
@@ -38,6 +44,7 @@ int main() {
 		sleep(1);
 
 	}
+	*/
 }
 
 
