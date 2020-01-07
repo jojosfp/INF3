@@ -28,7 +28,7 @@ void StrategyOne::strat(){
 	string host = "localhost";
 	string msg;
 
-	// Zwischenspeicher für Daten
+	// Zwischenspeicher fï¿½r Daten
 	fstream data;
 
 	// Treffer, Schusszaehler, Spielzaehler
@@ -63,6 +63,8 @@ void StrategyOne::strat(){
 			{
 				//Koordinaten ausgeben
 				msg = "COORD[" + to_string(x) + ";" + to_string(y) + "]";
+				
+				
 
 				//Koordinaten an Server senden
 				cout << "client:	" << msg << endl;
