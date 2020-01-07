@@ -64,8 +64,6 @@ void StrategyOne::strat(){
 				//Koordinaten ausgeben
 				msg = "COORD[" + to_string(x) + ";" + to_string(y) + "]";
 				
-				
-
 				//Koordinaten an Server senden
 				cout << "client:	" << msg << endl;
 				c.sendData(msg);
@@ -119,7 +117,7 @@ void StrategyOne::strat(){
 		data << shotcounter << endl;
 
 		//Beenden des Alg. bei 20 Durchgaengen
-		if (gamecounter >= 19)
+		if (gamecounter >= 20)
 		{
 			goOn = 0;
 			break;
