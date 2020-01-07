@@ -9,13 +9,14 @@
 #include <iostream>
 #include <unistd.h> //contains various constants
 
+#include "STRATEGY.H"
 #include "SIMPLESOCKET.H"
 
 using namespace std;
 
 int main() {
 
-	StragetyOne tryMeHarder;
+	StrategyOne tryMeHarder;
 	tryMeHarder.strat();
 
 
