@@ -1,0 +1,24 @@
+Anzahl der benoetigten Schuesse zum beenden des Spiels mittels StrategyOne
+
+Benoetigte Schuesse:
+
+Spiel # 1 :   98
+Spiel # 2 :   99
+Spiel # 3 :   99
+Spiel # 4 :   99
+Spiel # 5 :   98
+Spiel # 6 :   99
+Spiel # 7 :   98
+Spiel # 8 :   98
+Spiel # 9 :   97
+Spiel # 10 :   96
+Spiel # 11 :   87
+Spiel # 12 :   99
+Spiel # 13 :   99
+Spiel # 14 :   94
+Spiel # 15 :   98
+Spiel # 16 :   99
+Spiel # 17 :   99
+Spiel # 18 :   97
+Spiel # 19 :   97
+Spiel # 20 :   97

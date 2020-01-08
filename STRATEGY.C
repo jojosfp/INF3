@@ -28,11 +28,11 @@ void StrategyOne::strat(){
 	string host = "localhost";
 	string msg;
 
-	// Zwischenspeicher für Daten
+	// Zwischenspeicher fï¿½r Daten
 	fstream data;
 
-	// Treffer, Schusszaehler, Spielzaehler
-	int hitcounter, shotcounter, gamecounter=1;
+	// Schusszaehler, Spielzaehler
+	int shotcounter, gamecounter=1;
 	int x, y;
 
 	// Verbindung zum Host
@@ -52,7 +52,6 @@ void StrategyOne::strat(){
 	while(goOn)
 	{
 		shotcounter = 0;
-		hitcounter = 0;
 
 		x = 1;
 		y = 1;
@@ -62,7 +61,7 @@ void StrategyOne::strat(){
 			while (x <= 10)
 			{
 				// Koordinaten in msg schreiben
-				msg = "COORD[" + to_string(x) + ";" + to_string(y) + "]";
+				msg = "COORD[" + to_string(x) + "," + to_string(y) + "]";
 
 				// msg (Koordinaten) an Server senden
 				cout << "client:	" << msg << endl;
@@ -72,29 +71,9 @@ void StrategyOne::strat(){
 				msg = c.receive(24);
 				cout << "server:	" << msg << endl;
 
-				// Antwort auswerten (RES[1] = SHIP-HIT)
-				if(msg.compare(0,6, "RES[1]") == 0)
-				{
-					hitcounter++;
-
-					cout << hitcounter << endl;
-				}
-
-				// Antwort auswerten (RES[2] = SHIP-DESTROYED)
-				else if (msg.compare(0,6, "RES[2]") == 0)
-				{
-					hitcounter++;
-
-					cout << hitcounter << endl;
-				}
-
 				// Antwort auswerten (RES[4] = GAME-OVER)
 				if(msg.compare(0,6, "RES[4]") == 0)
 				{
-					hitcounter++;
-
-					cout << hitcounter << endl;
-
 					y = 11;
 
 					shotcounter++;
