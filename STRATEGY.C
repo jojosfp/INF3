@@ -99,7 +99,7 @@ void StrategyOne::strat(){
 		data << shotcounter << endl;
 
 		// Abbruchkriterium fuer Spieleanzahl
-		if (gamecounter >= 20)
+		if (gamecounter >= 10000)
 		{
 			goOn = 0;
 			break;
@@ -194,11 +194,6 @@ void StrategyTwo::strat()
 					break;
 				}
 			}
-			/*else
-			{
-				cout << "Der ";
-				break;
-			}*/
 		}
 
 		//Shotcounter Ausgabe im Clientenfenster
@@ -209,7 +204,7 @@ void StrategyTwo::strat()
 		data << shotcounter << endl;
 
 		// Abbruchkriterium fuer Spieleanzahl
-		if (gamecounter >= 1000)
+		if (gamecounter >= 100)
 		{
 			goOn = 0;
 			break;
