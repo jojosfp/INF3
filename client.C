@@ -16,8 +16,11 @@ using namespace std;
 
 int main() {
 
-	StrategyOne tryMeHarder;
-	tryMeHarder.strat();
+	//StrategyOne tryMeHarder;
+	//tryMeHarder.strat();
+
+	StrategyTwo tryALittle;
+	tryALittle.strat();
 
 
 	/*

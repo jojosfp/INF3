@@ -34,4 +34,16 @@ private:
 };
 
 
+class StrategyTwo : public IStrategy{
+
+public:
+
+	virtual void strat();
+
+protected:
+
+private:
+
+};
+
 #endif /* STRATEGY_H_ */
