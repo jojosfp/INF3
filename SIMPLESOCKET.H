@@ -7,10 +7,9 @@
 
 /**
  *
- * \file SIMPLESOCKET.H
+ * \file	SIMPLESOCKET.H
  *
- * \brief Contains the definition of the classes
- * for a TCP/IP client und server.
+ * \brief	Contains the definition of the classes for a TCP/IP client and server.
  *
  */
 
@@ -25,8 +24,9 @@ using namespace std;
 
 /**
  *
- *  \class TCPclient
- *  \brief The class defining the  of a TCP/IP client.
+ *  \class	TCPclient
+ *
+ *  \brief	The class defining the  of a TCP/IP client.
  *
  */
 class TCPclient{
@@ -46,35 +46,35 @@ public:
 
 	/**
 	 *
-	 * \brief Connects the client to the server.
+	 * \brief	Connects the client to the server.
 	 *
-	 * \param ipAdr string IP address of the server.
+	 * \param	ipAdr string IP address of the server.
 	 *
-	 * \param port int number of the server
+	 * \param	port int number of the server
 	 *
-	 * \return bool true if connection is successfully established.
+	 * \return	bool true if connection is successfully established.
 	 *
 	 */
 	bool conn(string ipAdr, int port);
 
 	/**
 	 *
-	 * \brief Sends data to the server.
+	 * \brief	Sends data to the server.
 	 *
-	 * \param data string containing the data send to the server
+	 * \param	data string containing the data send to the server
 	 *
-	 * \return bool true if the sending is successful.
+	 * \return	bool true if the sending is successful.
 	 *
 	 */
 	bool sendData(string data);
 
 	/**
 	 *
-	 * \brief Waits for the response of the server and returns a string containing the response data.
+	 * \brief	Waits for the response of the server and returns a string containing the response data.
 	 *
-	 * \param size int maximal string size of the return string.
+	 * \param	size int maximal string size of the return string.
 	 *
-	 * \return string contains the response after sending data.
+	 * \return	string contains the response after sending data.
 	 *
 	 */
 	string receive(int size);
@@ -82,8 +82,8 @@ public:
 
 /**
  *
- *  \class TCPserver
- *  \brief     The class defining the  of a TCP/IP server.
+ *  \class	TCPserver
+ *  \brief	The class defining the  of a TCP/IP server.
  *
  */
 class TCPserver{
@@ -98,17 +98,17 @@ private:
 public:
 	/**
 	 *
-	 * \brief Destructor
+	 * \brief	Destructor
 	 *
 	 */
 	~TCPserver();
 
 	/**
 	 *
-	 *  \brief constructor
+	 *  \brief	constructor
 	 *
-	 *  \param port int number the server listens.
-	 *  \param maxDataSizeRecv int maximal size of the messages the server can receive.
+	 *  \param	port int number the server listens.
+	 *  \param	maxDataSizeRecv int maximal size of the messages the server can receive.
 	 *
 	 */
 	TCPserver(int port, int maxDataSizeRecv);

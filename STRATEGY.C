@@ -99,7 +99,7 @@ void StrategyOne::strat(){
 		data << shotcounter << endl;
 
 		// Abbruchkriterium fuer Spieleanzahl
-		if (gamecounter >= 10)
+		if (gamecounter >= 100)
 		{
 			goOn = 0;
 			break;
